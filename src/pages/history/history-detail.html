@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of items">
+    <ion-card-header color="primary">
+      {{item.serviceName}}
+      <ion-note item-right>{{item.createdDate | date: 'dd/MM/yyyy'}}</ion-note>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Worker: Son Nguyen</p>
+      <p>Cost: #100.00</p>
+      <p>Service: VIP</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

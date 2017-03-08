@@ -1,0 +1,33 @@
+<ion-menu [content]="content">
+
+  <ion-header>
+    <ion-row class="animated zoomIn" padding>
+      <ion-col width-33>
+        <img style="border-radius: 50%; width: 100px" src="assets/icon/avatar-01.svg"/>
+      </ion-col>
+      <ion-col style="margin: auto">
+        <span>Son Nguyen</span>
+        <span>tenant@2homes.com</span>
+        <span>2B Dong Den, Tan Binh</span>
+        <span>(0122) 809-4650</span>
+      </ion-col>
+    </ion-row>
+  </ion-header>
+
+  <ion-content>
+    
+    <ion-list no-lines>
+      <button ion-item icon-left *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}"></ion-icon>
+        {{p.title}}
+      </button>
+      <button ion-item icon-left (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+        Logout
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

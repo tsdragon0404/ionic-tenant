@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Account Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <ion-segment [(ngModel)]="action">
+      <ion-segment-button value="profile">
+        Profile
+      </ion-segment-button>
+      <ion-segment-button value="password">
+        Password
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="action">
+    <ion-list *ngSwitchCase="'profile'">
+    </ion-list>
+
+    <form #updatePasswordForm="ngForm" *ngSwitchCase="'password'">
+      <ion-list>
+        <ion-item>
+          <ion-label>Current Password</ion-label>
+          <ion-input type="password" name="currentPassword" [(ngModel)]="updatePassword.currentPassword" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>New Password</ion-label>
+          <ion-input type="password" name="newPassword" [(ngModel)]="updatePassword.newPassword" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Confirm New Password</ion-label>
+          <ion-input type="password" name="confirmNewPassord" [(ngModel)]="updatePassword.confirmNewPassord" required></ion-input>
+        </ion-item>
+      </ion-list>
+      <div padding>
+        <button ion-button round full [disabled]="!updatePasswordForm.form.valid">Update</button>
+      </div>
+    </form>
+  </div>
+</ion-content>

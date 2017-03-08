@@ -1,0 +1,42 @@
+<!--
+  Generated template for the ServicePayment page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Services - Payment</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card class="card-item" *ngFor="let item of currentItems" type="button" (click)="openDetails(item)">
+    <ion-card-header color="primary">
+      {{item.serviceName}}
+    </ion-card-header>
+    <ion-card-content>
+      
+        <ion-row>
+          <ion-col>Date of Service</ion-col>
+          <span item-right>{{item.dateOfService}}</span>
+        </ion-row>
+        <ion-row>
+          <ion-col>Service by</ion-col>
+          <span item-right>{{item.staff}}</span>
+        </ion-row>
+        <ion-row>
+          <ion-col>Amount</ion-col>
+          <span item-right>${{item.amount}}</span>
+        </ion-row>
+        <ion-row>
+          <ion-col>Due Date</ion-col>
+          <span item-right>{{item.due}}</span>
+        </ion-row>
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>
