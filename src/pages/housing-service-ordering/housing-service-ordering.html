@@ -1,0 +1,20 @@
+<!--
+  Generated template for the HousingServiceOrdering page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Extend Services</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <button ion-item *ngFor="let item of items" (click)="commonServiceSelect(item)">
+    {{ item.name }}
+  </button>
+</ion-content>

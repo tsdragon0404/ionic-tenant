@@ -1,0 +1,33 @@
+<!--
+  Generated template for the EmergencyRepair page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Emergency Repair</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form #orderForm="ngForm" (ngSubmit)="onSubmit(orderForm.value)" >
+    <ion-item>
+      <ion-label>Service</ion-label>
+      <ion-select [(ngModel)]="services.value" name="value">
+        <ion-option *ngFor="let s of services" value="{{s.value}}" #serviceSelected>
+          {{s.name}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="order.comment" name="comment" placeholder="Comments"></ion-input>
+    </ion-item>
+    <div padding>
+      <button type="submit" ion-button round full>Submit Order</button>
+    </div>
+  </form>
+</ion-content>

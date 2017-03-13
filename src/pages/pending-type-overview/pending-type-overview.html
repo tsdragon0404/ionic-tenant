@@ -1,0 +1,47 @@
+<!--
+  Generated template for the PendingTypeOverview page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Pending Services</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-list-header color="light">
+      {{requests.title}}
+    </ion-list-header>
+
+      <ion-item-sliding *ngFor="let item of requests.services">
+        <ion-item (click)="onSelected(item)">
+          <h2 color="{{getColor(item.status)}}">{{item.name}} <ion-icon *ngIf="item.serviceType == 'VIP'" name="bookmark"></ion-icon></h2>
+          <ion-note item-right>{{item.requestDate | date: 'dd/MM/yyyy'}}</ion-note>
+          <p><ion-icon name="person"></ion-icon> {{item.worker}}</p>
+          <p><ion-icon name="clock"></ion-icon> {{item.scheduleDate | date: 'dd/MM/yyyy h:mma'}}</p>
+        </ion-item>
+
+        <ion-item-options side="right">
+          <button ion-button color="secondary" *ngIf="item.status == 'PENDING_APPROVAL'">
+            <ion-icon name="thumbs-up"></ion-icon>
+            Approve
+          </button>
+          <button ion-button color="primary" (click)="onSelected(item)" *ngIf="item.status != 'PENDING_RESPONSE'">
+            <ion-icon name="create"></ion-icon>
+            Edit
+          </button>
+          <button ion-button color="danger">
+            <ion-icon name="close-circle"></ion-icon>
+            Cancel
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+  </ion-list>
+</ion-content>

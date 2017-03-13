@@ -21,12 +21,31 @@ export class BillingPaymentPage {
   items: Array<{ title: string, component: any }>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.initializeItems();
+  }
+
+  initializeItems() {
     this.items = [
       { title: 'Rental', component: RentalPaymentPage },
       { title: 'Utilities', component: UtilitiesPaymentPage },
       { title: 'Services', component: ServicePaymentPage },
-      { title: 'Settings', component: SettingPaymentPage }
+      { title: 'Setup Payment', component: SettingPaymentPage }
     ];
+  }
+
+  getItems(ev) {
+    // Reset items back to all of the items
+    this.initializeItems();
+
+    // set val to the value of the ev target
+    var val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
   }
 
   openItem(item) {

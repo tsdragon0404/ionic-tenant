@@ -32,6 +32,19 @@ import { ServicePaymentPage } from '../pages/service-payment/service-payment';
 import { SettingPaymentPage } from '../pages/setting-payment/setting-payment';
 import { ServiceDetailPage } from '../pages/service-detail/service-detail';
 
+import { OrderServicePage } from '../pages/order-service/order-service';
+import { EmergencyRepairPage } from '../pages/emergency-repair/emergency-repair';
+import { HousingServiceOrderingPage } from '../pages/housing-service-ordering/housing-service-ordering';
+import { PendingServiceOrderingPage } from '../pages/pending-service-ordering/pending-service-ordering';
+import { StatisticServiceOrderingPage } from '../pages/statistic-service-ordering/statistic-service-ordering';
+import { CommonServiceDetailPage } from '../pages/common-service-detail/common-service-detail';
+import { PendingTypeOverviewPage } from '../pages/pending-type-overview/pending-type-overview';
+import { PendingDetailPage } from '../pages/pending-detail/pending-detail';
+import { WaitingServiceOrderingPage } from '../pages/waiting-service-ordering/waiting-service-ordering';
+import { WaitingServiceOverviewPage } from '../pages/waiting-service-overview/waiting-service-overview';
+import { WaitingServiceDetailPage } from '../pages/waiting-service-detail/waiting-service-detail';
+import { MorePage } from '../pages/more/more';
+
 import { AuthService } from '../providers/auth-service';
 
 @NgModule({
@@ -61,7 +74,19 @@ import { AuthService } from '../providers/auth-service';
     UtilitiesPaymentPage,
     ServicePaymentPage,
     SettingPaymentPage,
-    ServiceDetailPage
+    ServiceDetailPage,
+    OrderServicePage,
+    EmergencyRepairPage,
+    HousingServiceOrderingPage,
+    PendingServiceOrderingPage,
+    WaitingServiceOrderingPage,
+    StatisticServiceOrderingPage,
+    CommonServiceDetailPage,
+    PendingTypeOverviewPage,
+    PendingDetailPage,
+    WaitingServiceOverviewPage,
+    WaitingServiceDetailPage,
+    MorePage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -94,7 +119,19 @@ import { AuthService } from '../providers/auth-service';
     UtilitiesPaymentPage,
     ServicePaymentPage,
     SettingPaymentPage,
-    ServiceDetailPage
+    ServiceDetailPage,
+    OrderServicePage,
+    EmergencyRepairPage,
+    HousingServiceOrderingPage,
+    PendingServiceOrderingPage,
+    WaitingServiceOrderingPage,
+    StatisticServiceOrderingPage,
+    CommonServiceDetailPage,
+    PendingTypeOverviewPage,
+    PendingDetailPage,
+    WaitingServiceOverviewPage,
+    WaitingServiceDetailPage,
+    MorePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, AuthService]
 })

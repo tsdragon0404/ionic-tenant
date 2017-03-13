@@ -1,0 +1,31 @@
+import { Component } from '@angular/core';
+import { NavController, NavParams, LoadingController, ModalController, Platform, ViewController } from 'ionic-angular';
+import { WaitingServiceDetailPage } from '../waiting-service-detail/waiting-service-detail';
+
+/*
+  Generated class for the WaitingServiceOverview page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+*/
+@Component({
+  selector: 'page-waiting-service-overview',
+  templateUrl: 'waiting-service-overview.html'
+})
+export class WaitingServiceOverviewPage {
+  requests: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public modalCtrl: ModalController) {
+    this.requests = navParams.data;
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad WaitingServiceOverviewPage');
+  }
+
+  onSelected(item){
+    let modal = this.modalCtrl.create(WaitingServiceDetailPage, item);
+    modal.present();
+  }
+
+}

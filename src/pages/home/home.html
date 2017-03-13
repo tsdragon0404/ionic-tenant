@@ -1,3 +1,4 @@
+<!--
 <ion-menu [content]="content">
 
   <ion-header>
@@ -30,4 +31,14 @@
 
 </ion-menu>
 
+<!--
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+-->
+
+<ion-tabs #content>
+  <ion-tab tabIcon="home" tabTitle="Home" [root]="tab1" swipeBackEnabled="true"></ion-tab>
+  <ion-tab tabIcon="cash" tabTitle="Payment" [root]="tab2" tabBadge="2" tabBadgeStyle="danger" swipeBackEnabled="true"></ion-tab>
+  <ion-tab tabIcon="cart" tabTitle="Services" [root]="tab3" tabBadge="3" tabBadgeStyle="danger" swipeBackEnabled="true"></ion-tab>
+  <ion-tab tabIcon="cog" tabTitle="History" [root]="tab4" swipeBackEnabled="true"></ion-tab>
+  <ion-tab tabIcon="menu" tabTitle="More" [root]="tab5" swipeBackEnabled="true"></ion-tab>
+</ion-tabs>

@@ -5,9 +5,11 @@ import { LoginPage } from '../login/login'
 import { AccountPage } from '../account/account';
 import { HousingServicePage } from '../housing-service/housing-service';
 import { DashboardPage } from '../dashboard/dashboard';
-import { BillingPage } from '../billing/billing';
+import { BillingPaymentPage } from '../billing-payment/billing-payment';
 import { SettingsPage } from '../settings/settings';
 import { AboutPage } from '../about/about';
+import { OrderServicePage } from '../order-service/order-service';
+import { MorePage } from '../more/more';
 
 @Component({
   selector: 'page-home',
@@ -16,17 +18,30 @@ import { AboutPage } from '../about/about';
 export class HomePage {
   
   @ViewChild(Nav) nav: Nav;
-  rootPage: any = DashboardPage;
+  rootPage: any;
   pages: Array<{icon: string, title: string, component: any}>;
+  
+  tab1: any;
+  tab2: any;
+  tab3: any;
+  tab4: any;
+  tab5: any;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform, public menu: MenuController) {
     this.pages = [
       { icon: 'speedometer', title: 'Dashboard', component: DashboardPage },
-      { icon: 'cash', title: 'Billing Management', component: BillingPage },
+      { icon: 'cash', title: 'Billing Management', component: BillingPaymentPage },
       { icon: 'home', title: 'Services', component: HousingServicePage },
+      { icon: 'basket', title: 'Order Services', component: OrderServicePage },
       { icon: 'cog', title: 'Settings', component: SettingsPage },
       { icon: 'information-circle', title: 'About us', component: AboutPage }
     ];
+
+    this.tab1 = DashboardPage;
+    this.tab2 = BillingPaymentPage;
+    this.tab3 = OrderServicePage;
+    this.tab4 = SettingsPage;
+    this.tab5 = MorePage;
   }
 
   ionViewDidLoad() {
