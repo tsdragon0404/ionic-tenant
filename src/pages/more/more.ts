@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, ActionSheetController } from 'ionic-angular';
 
-import { HousingServicePage } from '../housing-service/housing-service';
-import { DashboardPage } from '../dashboard/dashboard';
-import { BillingPaymentPage } from '../billing-payment/billing-payment';
+import { LoginPage } from '../login/login'
+import { AccountPage } from '../account/account';
 import { SettingsPage } from '../settings/settings';
 import { AboutPage } from '../about/about';
-import { OrderServicePage } from '../order-service/order-service';
 
 /*
   Generated class for the More page.
@@ -22,15 +20,39 @@ export class MorePage {
 
   pages: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public actionSheetCtrl: ActionSheetController) {
     this.pages = [
-      { icon: 'speedometer', title: 'Dashboard', component: DashboardPage },
-      { icon: 'cash', title: 'Billing Management', component: BillingPaymentPage },
-      { icon: 'home', title: 'Services', component: HousingServicePage },
-      { icon: 'basket', title: 'Order Services', component: OrderServicePage },
       { icon: 'cog', title: 'Settings', component: SettingsPage },
       { icon: 'information-circle', title: 'About us', component: AboutPage }
     ];
+  }
+
+  openAccountPage(){
+    this.navCtrl.push(AccountPage);
+  }
+
+  openPage(page){
+    this.navCtrl.push(page.component);
+  }
+
+  logout(){
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Are you sure you want to log out?',
+      buttons: [
+        {
+          text: 'Log Out',
+          role: 'destructive',
+          handler: () => {
+            this.navCtrl.parent.parent.setRoot(LoginPage);
+          }
+        },{
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => { }
+        }
+      ]
+    });
+    actionSheet.present();
   }
 
   ionViewDidLoad() {

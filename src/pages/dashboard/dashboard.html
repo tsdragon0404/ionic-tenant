@@ -6,34 +6,41 @@
 -->
 <ion-content>
   <ion-slides pager>
-    <ion-slide>
-      <ion-list>
-        <ion-item>
-          <ion-label>Payment date</ion-label>
+    <ion-slide class="current-bill">
+      <div style="padding-top: 15px">
+        <ion-icon name="cube" style="font-size: 70px" color="primary"></ion-icon>
+      </div>
+      <ion-list no-lines>
+        <ion-item-divider color="light" style="font-style: italic;">
+          <span item-left style="font-size: 14px">Payment Date</span>
           <span item-right>23/03/2017</span>
+        </ion-item-divider>
+        <ion-item style="text-align: center">
+          <span style="font-size: 16px">$</span>
+          <span class="payment-amount" color="primary">630.00</span>
         </ion-item>
-        <ion-item>
-          <ion-label>Payment amount</ion-label>
-          <span item-right>$630.00</span>
-        </ion-item>
-        <ion-item>
-          <ion-label>Late fee</ion-label>
-          <span item-right>$30.00</span>
-        </ion-item>
-        <ion-item>
-          <ion-label>Late payment date</ion-label>
+
+        <ion-item-divider color="light" style="font-style: italic;">
+          <span item-left style="font-size: 14px">Late Payment Date</span>
           <span item-right>30/03/2017</span>
+        </ion-item-divider>
+        <ion-item style="text-align: center">
+          <span style="font-size: 16px">$</span>
+          <span class="payment-amount" color="danger">30.00</span>
+        </ion-item>
+        <ion-item-divider color="light">
+        </ion-item-divider>
+        <ion-item>
+          <ion-icon name="build" item-left></ion-icon>
+          <span style="font-style: italic">Pending services</span>
+          <ion-badge item-right>2</ion-badge>
         </ion-item>
         <ion-item>
-          <ion-label>Pending services</ion-label>
-          <span item-right>2</span>
-        </ion-item>
-        <ion-item>
-          <ion-label>Year-to-end spending</ion-label>
-          <span item-right>$6000.00</span>
+          <ion-icon name="cash" item-left></ion-icon>
+          <span style="font-style: italic">Year-to-end spending</span>
+          <ion-badge item-right>$1,450.00</ion-badge>
         </ion-item>
       </ion-list>
-
     </ion-slide>
 
     <ion-slide padding>
@@ -45,8 +52,9 @@
             (chartHover)="chartHovered($event)"
             (chartClick)="chartClicked($event)">
         </canvas>
+        <span style="font-style: italic; font-size: 14px" color="primary">Year-to-end expend</span>
       </div>
-      <div class="animated zoomIn">
+      <div class="animated zoomIn" style="margin-top: 10px">
         <canvas baseChart
             [datasets]="barChartData"
             [labels]="barChartLabels"
@@ -56,6 +64,7 @@
             (chartHover)="barChartHovered($event)"
             (chartClick)="barChartClicked($event)">
         </canvas>
+        <span style="font-style: italic; font-size: 14px" color="primary">History expend</span>
       </div>
 
     </ion-slide>

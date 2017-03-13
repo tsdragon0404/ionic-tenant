@@ -29,7 +29,7 @@ export class BillingPaymentPage {
       { title: 'Rental', component: RentalPaymentPage },
       { title: 'Utilities', component: UtilitiesPaymentPage },
       { title: 'Services', component: ServicePaymentPage },
-      { title: 'Setup Payment', component: SettingPaymentPage }
+      { title: 'Payment Method', component: SettingPaymentPage }
     ];
   }
 

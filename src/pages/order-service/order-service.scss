@@ -1,3 +1,16 @@
 page-order-service {
+    .custom-button{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 8px;
+    }
+    .custom-button ion-icon{
+        font-size: 70px;
+    }
 
+    .custom-button span{
+        font-size: 14px;
+        font-style: italic;
+    }
 }

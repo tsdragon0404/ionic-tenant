@@ -7,16 +7,16 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Settings - Payment</ion-title>
+    <ion-title>Payment Method</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="openItem(item)">
-      {{ item.name }}
-    </button>
+  <ion-list radio-group>
+    <ion-item *ngFor="let item of items">
+      <ion-label>{{ item.name }}</ion-label>
+      <ion-radio checked="{{item.type == selectedType}}" value="{{item.type}}"></ion-radio>
+    </ion-item>
   </ion-list>
 </ion-content>

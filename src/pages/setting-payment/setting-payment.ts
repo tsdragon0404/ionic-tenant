@@ -14,26 +14,33 @@ import { NavController, NavParams } from 'ionic-angular';
 export class SettingPaymentPage {
 
   items : any;
+  selectedType: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.items = [
       {
+        type: "DE",
         name: "Deposit"
       },
       {
+        type: "CE",
         name: "Company Expense"
       },
       {
+        type: "CC",
         name: "Credit Card"
       },
       {
+        type: "PP",
         name: "Paypal"
       }
     ];
+
+    this.selectedType = 'CC';
   }
 
-  openItem(item){
-    
+  onChange(item){
+    console.log(item);
   }
 
   ionViewDidLoad() {

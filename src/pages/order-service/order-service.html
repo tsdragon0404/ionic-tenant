@@ -12,10 +12,32 @@
 
 </ion-header>
 
-
 <ion-content>
+  <!--
   <button ion-item *ngFor="let item of items" (click)="openItem(item)">
     {{ item.title }}
   </button>
+  -->
+  <ion-row>
+    <ion-col class="custom-button">
+      <ion-icon name="call" color="danger" (click)="openItem(items[0])"></ion-icon>
+      <span>Emergency Repair</span>
+    </ion-col>
+    <ion-col class="custom-button" color="primary">
+      <ion-icon name="construct" (click)="openItem(items[1])"></ion-icon>
+      <span>Extend Services</span>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="custom-button" color="primary">
+      <ion-icon name="swap" (click)="openItem(items[2])"></ion-icon>
+      <span>Pending Services</span>
+    </ion-col>
+    <ion-col class="custom-button">
+      <ion-icon name="code-working" (click)="openItem(items[3])"></ion-icon>
+      <span>Waiting Services</span>
+    </ion-col>
+  </ion-row>
 
 </ion-content>

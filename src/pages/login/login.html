@@ -1,30 +1,34 @@
-<ion-content>
-  <ion-row class="logo-row animated zoomIn">
-    <ion-col></ion-col>
-    <ion-col width-50>
-      <img class="avatar-login" src="assets/icon/avatar-01.svg"/>
-    </ion-col>
-    <ion-col></ion-col>
-  </ion-row>
-  <div padding class="animated fadeInUp">
-    <form (ngSubmit)="login()" #registerForm="ngForm">
-      <ion-list>
+
+
+<ion-content style="background-image: url('assets/icon/property-management-company.jpg'); background-size: cover;">
+  <div style="margin-top: 20%">
+    <ion-row class="logo-row animated zoomIn">
+      <ion-col></ion-col>
+      <ion-col width-50>
+        <img src="assets/icon/Logo-01.png"/>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <div padding class="animated fadeInUp">
+      <form (ngSubmit)="login()" #registerForm="ngForm">
+        <ion-list>
+          
+          <ion-item style="background: rgba(255,255,255,0.5); border-top: none">
+            <ion-label>Email</ion-label>
+            <ion-input type="text" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+          </ion-item>
+          
+          <ion-item style="background: rgba(255,255,255,0.5);">
+            <ion-label>Password</ion-label>
+            <ion-input type="password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+          </ion-item>
+          
+        </ion-list>
+        <div>
+          <button round full ion-button type="submit" [disabled]="!registerForm.form.valid">Login</button>
+        </div>
         
-        <ion-item>
-          <ion-label>Email</ion-label>
-          <ion-input type="text" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
-        </ion-item>
-        
-        <ion-item>
-          <ion-label>Password</ion-label>
-          <ion-input type="password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
-        </ion-item>
-        
-      </ion-list>
-      <div>
-        <button round full ion-button type="submit" [disabled]="!registerForm.form.valid">Login</button>
-      </div>
-      
-    </form>
+      </form>
+    </div>
   </div>
 </ion-content>

@@ -5,7 +5,6 @@ import { EmergencyRepairPage } from '../emergency-repair/emergency-repair';
 import { HousingServiceOrderingPage } from '../housing-service-ordering/housing-service-ordering';
 import { PendingServiceOrderingPage } from '../pending-service-ordering/pending-service-ordering';
 import { WaitingServiceOrderingPage } from '../waiting-service-ordering/waiting-service-ordering';
-import { StatisticServiceOrderingPage } from '../statistic-service-ordering/statistic-service-ordering';
 
 /*
   Generated class for the OrderService page.
@@ -26,8 +25,7 @@ export class OrderServicePage {
       {title: 'Emergency Repair', component: EmergencyRepairPage },
       {title: 'Extend Services', component: HousingServiceOrderingPage },
       {title: 'Pending Services', component: PendingServiceOrderingPage },
-      {title: 'Waiting Services', component: WaitingServiceOrderingPage },
-      {title: 'Statistics', component: StatisticServiceOrderingPage }
+      {title: 'Waiting Services', component: WaitingServiceOrderingPage }
     ];
   }
 
