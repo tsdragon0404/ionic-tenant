@@ -12,7 +12,7 @@ export class LoginPage {
   registerCredentials = {email: '', password: ''};
  
   constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) {
-    this.registerCredentials.email = 'tenant@2homes.com';
+    this.registerCredentials.email = 'tenant@2homes.vn';
     this.registerCredentials.password = 'admin';
   }
  
