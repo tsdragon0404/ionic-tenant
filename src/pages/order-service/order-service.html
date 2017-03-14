@@ -16,23 +16,39 @@
 
   <ion-row>
     <ion-col class="custom-button animated zoomIn">
-      <ion-icon name="call" color="danger" (click)="openItem(items[0])"></ion-icon>
-      <span>Emergency Repair</span>
+      
+      <button ion-button color="danger" icon-left full (click)="openItem(items[0])">
+        <ion-icon name='call'></ion-icon>
+        <span>Emergency Repair</span>
+      </button>
+      
     </ion-col>
     <ion-col class="custom-button animated zoomIn">
-      <ion-icon name="construct" color="primary" (click)="openItem(items[1])"></ion-icon>
-      <span>Extend Services</span>
+
+      <button ion-button color="primary" icon-left full (click)="openItem(items[1])">
+        <ion-icon name='construct'></ion-icon>
+        <span>Extend Services</span>
+      </button>
+
     </ion-col>
   </ion-row>
 
   <ion-row>
     <ion-col class="custom-button animated zoomIn" color="primary">
-      <ion-icon name="swap" (click)="openItem(items[2])" color="secondary"></ion-icon>
-      <span>Pending Services</span>
+
+      <button ion-button color="secondary" icon-left full (click)="openItem(items[2])">
+        <ion-icon name='swap'></ion-icon>
+        <span>Pending Services</span>
+      </button>
+
     </ion-col>
     <ion-col class="custom-button animated zoomIn">
-      <ion-icon name="code-working" color="dark" (click)="openItem(items[3])"></ion-icon>
-      <span>Awaiting Services</span>
+
+      <button ion-button color="dark" icon-left full (click)="openItem(items[3])">
+        <ion-icon name='code-working'></ion-icon>
+        <span>Awaiting Services</span>
+      </button>
+      
     </ion-col>
   </ion-row>
 
