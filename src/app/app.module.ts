@@ -44,6 +44,8 @@ import { WaitingServiceOrderingPage } from '../pages/waiting-service-ordering/wa
 import { WaitingServiceOverviewPage } from '../pages/waiting-service-overview/waiting-service-overview';
 import { WaitingServiceDetailPage } from '../pages/waiting-service-detail/waiting-service-detail';
 import { MorePage } from '../pages/more/more';
+import { PendingDetailHistoryPage } from '../pages/pending-detail-history/pending-detail-history';
+import { WaitingDetailHistoryPage } from '../pages/waiting-detail-history/waiting-detail-history';
 
 import { AuthService } from '../providers/auth-service';
 
@@ -86,7 +88,9 @@ import { AuthService } from '../providers/auth-service';
     PendingDetailPage,
     WaitingServiceOverviewPage,
     WaitingServiceDetailPage,
-    MorePage
+    MorePage,
+    PendingDetailHistoryPage,
+    WaitingDetailHistoryPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -131,7 +135,9 @@ import { AuthService } from '../providers/auth-service';
     PendingDetailPage,
     WaitingServiceOverviewPage,
     WaitingServiceDetailPage,
-    MorePage
+    MorePage,
+    PendingDetailHistoryPage,
+    WaitingDetailHistoryPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, AuthService]
 })

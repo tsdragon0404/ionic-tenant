@@ -24,8 +24,11 @@ export class WaitingServiceOverviewPage {
   }
 
   onSelected(item){
+    /*
     let modal = this.modalCtrl.create(WaitingServiceDetailPage, item);
     modal.present();
+    */
+    this.navCtrl.push(WaitingServiceDetailPage, item);
   }
 
 }

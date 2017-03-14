@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController, LoadingController } from 'ionic-angular';
-
+import { NavController, NavParams, ViewController, LoadingController, ModalController } from 'ionic-angular';
+import {PendingDetailHistoryPage} from '../pending-detail-history/pending-detail-history';
 /*
   Generated class for the PendingDetail page.
 
@@ -16,7 +16,7 @@ export class PendingDetailPage {
   service: any;
   personnel:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public loadingCtrl: LoadingController, public modalCtr: ModalController) {
     this.service = this.navParams.data;
     this.personnel = [
       {name: 'Anh Hung'},
@@ -31,18 +31,21 @@ export class PendingDetailPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PendingDetailPage');
   }
-
+/*
   dismiss() {
     this.viewCtrl.dismiss();
   }
-
+*/
   change(){
     let loader = this.loadingCtrl.create({
       content: "Request changing...",
       duration: 3000
     });
     loader.present().then(() => {
+        /*
         this.viewCtrl.dismiss();
+        */
+        this.navCtrl.pop();
     });
   }
 
@@ -53,6 +56,11 @@ export class PendingDetailPage {
       return 'danger';
     if(status == 'PENDING_APPROVAL')
       return 'primary';
+  }
+
+  fetchHistory(service){
+    let modal = this.modalCtr.create(PendingDetailHistoryPage, service);
+    modal.present();
   }
 
 }

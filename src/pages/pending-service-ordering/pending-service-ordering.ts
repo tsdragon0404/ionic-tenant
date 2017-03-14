@@ -19,13 +19,33 @@ export class PendingServiceOrderingPage {
 
     this.items = [
       {title: 'House Repairs', count: 3, services: [
-        {name: 'Plumbing', status: "PENDING_RESPONSE", serviceType: "NORMAL", requestDate: new Date().toISOString(), scheduleDate: new Date().toISOString(), scheduleTime: new Date().toISOString(), worker: 'Anh Hung', cost: 5, comment: 'kitchen sink leaked'},
-        {name: 'Painting', status: "REJECT", serviceType: "VIP", requestDate: new Date().toISOString(), scheduleDate: new Date().toISOString(), scheduleTime: new Date().toISOString(), worker: 'Chu Cao', cost: 10, comment: 'main door painting'},
-        {name: 'Electrics', status: "PENDING_APPROVAL", serviceType: "NORMAL", requestDate: new Date().toISOString(), scheduleDate: new Date().toISOString(), scheduleTime: new Date().toISOString(), worker: 'Anh Tuan', cost: 5, comment: 'AC breaked'}
+        {name: 'Plumbing', status: "PENDING_RESPONSE", serviceType: "NORMAL", requestDate: new Date("2017-02-22T02:00:00Z").toISOString(), scheduleDate: new Date("2017-02-25T02:00:00Z").toISOString(), scheduleTime: new Date("2017-02-25T02:00:00-07:00").toISOString(), worker: 'Anh Hung', cost: 5, comment: 'kitchen sink leaked', history: [
+            {status: "create", date: new Date("2017-02-22T02:00:00Z").toISOString(), comment: "kitchen sink leak"}
+          ]
+        },
+        {name: 'Painting', status: "REJECT", serviceType: "VIP", requestDate: new Date("2017-02-22T02:00:00Z").toISOString(), scheduleDate: new Date("2017-02-23T02:00:00Z").toISOString(), scheduleTime: new Date("2017-02-23T02:00:00-07:00").toISOString(), worker: 'Chu Cao', cost: 10, comment: 'main door painting', history: [
+            {status: "create", date: new Date("2017-02-22T02:00:00Z").toISOString(), comment: "main door painting"},
+            {status: "reject", date: new Date("2017-02-22T03:00:00Z").toISOString(), comment: "unavailable staff at that time, please change staff/time."}
+          ]
+        },
+        {name: 'Electrics', status: "PENDING_APPROVAL", serviceType: "NORMAL", requestDate: new Date("2017-02-22T02:00:00Z").toISOString(), scheduleDate: new Date("2017-02-25T02:00:00Z").toISOString(), scheduleTime: new Date("2017-02-25T02:00:00-07:00").toISOString(), worker: 'Anh Tuan', cost: 5, comment: 'AC breaked', history: [
+            {status: "create", date: new Date("2017-02-22T02:00:00Z").toISOString(), comment: "AC breaked"},
+            {status: "reject", date: new Date("2017-02-22T03:00:00Z").toISOString(), comment: "unavailable staff at that time, please change staff/time."},
+            {status: "modify", date: new Date("2017-02-22T04:00:00Z").toISOString(), comment: "AC breaked"}
+          ]
+        }
       ] },
       {title: 'Home Services', count: 2, services: [
-        {name: 'Cleaning', status: "PENDING_APPROVAL", serviceType: "NORMAL", requestDate: new Date().toISOString(), scheduleDate: new Date().toISOString(), scheduleTime: new Date().toISOString(), worker: 'Co Tam', cost: 5, comment: 'all floors'},
-        {name: 'Laundry', status: "PENDING_RESPONSE", serviceType: "VIP", requestDate: new Date().toISOString(), scheduleDate: new Date().toISOString(), scheduleTime: new Date().toISOString(), worker: 'Chi Thom', cost: 10, comment: 'all clothes and curtains'}
+        {name: 'Cleaning', status: "PENDING_APPROVAL", serviceType: "NORMAL", requestDate: new Date("2017-02-22T02:00:00Z").toISOString(), scheduleDate: new Date("2017-02-22T02:00:00Z").toISOString(), scheduleTime: new Date("2017-02-25T02:00:00-07:00").toISOString(), worker: 'Co Tam', cost: 5, comment: 'all floors', history: [
+            {status: "create", date: new Date("2017-02-22T02:00:00Z").toISOString(), comment: "all floors"},
+            {status: "reject", date: new Date("2017-02-22T03:00:00Z").toISOString(), comment: "unavailable staff at that time, please change staff/time."},
+            {status: "modify", date: new Date("2017-02-22T04:00:00Z").toISOString(), comment: "all floors"}
+          ]
+        },
+        {name: 'Laundry', status: "PENDING_RESPONSE", serviceType: "VIP", requestDate: new Date("2017-02-22T02:00:00Z").toISOString(), scheduleDate: new Date("2017-02-25T02:00:00Z").toISOString(), scheduleTime: new Date("2017-02-25T02:00:00-07:00").toISOString(), worker: 'Chi Thom', cost: 10, comment: 'all clothes and curtains', history: [
+            {status: "create", date: new Date("2017-02-22T02:00:00Z").toISOString(), comment: "all clothes and curtains"}
+          ]
+        }
       ] },
       {title: 'Transporting', count: 0, services: null },
       {title: 'Food', count: 0, services: null },

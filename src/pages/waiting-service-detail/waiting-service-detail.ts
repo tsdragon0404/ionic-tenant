@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController, LoadingController } from 'ionic-angular';
-
+import { NavController, NavParams, ViewController, LoadingController, ModalController } from 'ionic-angular';
+import {WaitingDetailHistoryPage} from '../waiting-detail-history/waiting-detail-history';
 /*
   Generated class for the WaitingServiceDetail page.
 
@@ -14,7 +14,7 @@ import { NavController, NavParams, ViewController, LoadingController } from 'ion
 export class WaitingServiceDetailPage {
   service: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public loadingCtrl: LoadingController, public modalCtr: ModalController) {
     this.service = this.navParams.data;
     console.log(this.navParams.data);
   }
@@ -23,8 +23,14 @@ export class WaitingServiceDetailPage {
     console.log('ionViewDidLoad WaitingServiceDetailPage');
   }
 
+/*
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+*/
+  fetchHistory(service){
+    let modal = this.modalCtr.create(WaitingDetailHistoryPage, service);
+    modal.present();
   }
 
 }

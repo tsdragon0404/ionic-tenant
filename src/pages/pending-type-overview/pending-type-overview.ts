@@ -24,8 +24,11 @@ export class PendingTypeOverviewPage {
   }
 
   onSelected(item){
+    /*
     let modal = this.modalCtrl.create(PendingDetailPage, item);
     modal.present();
+    */
+    this.navCtrl.push(PendingDetailPage, item);
   }
 
   getColor(status){

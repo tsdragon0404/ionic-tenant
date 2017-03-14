@@ -18,11 +18,25 @@ export class WaitingServiceOrderingPage {
     this.items = [
       {title: 'House Repairs', count: 0, services: null },
       {title: 'Home Services', count: 2, services: [
-        {name: 'Dry Cleaning', status: "WAITING", servieType: "VIP", requestDate: new Date().toISOString(), scheduleDate: new Date().toISOString(), scheduleTime: new Date().toISOString(), worker: 'Co Tam', cost: 5, comment: 'Personel will contact before working. Thank you.'},
-        {name: 'Lawn Mowing', status: "WAITING", servieType: "NORMAL", requestDate: new Date().toISOString(), scheduleDate: new Date().toISOString(), scheduleTime: new Date().toISOString(), worker: 'Chu Cao', cost: 10, comment: 'garden'}
+        {name: 'Dry Cleaning', status: "WAITING", servieType: "VIP", requestDate: new Date("2017-02-22T02:00:00Z").toISOString(), scheduleDate: new Date("2017-03-15T02:00:00Z").toISOString(), scheduleTime: new Date("2017-03-15T02:00:00-07:00").toISOString(), worker: 'Co Tam', cost: 5, comment: 'Personel will contact before working. Thank you.', history: [
+            {status: "create", date: new Date("2017-02-22T02:00:00Z").toISOString(), comment: "dry cleaning"},
+            {status: "reject", date: new Date("2017-02-22T03:00:00Z").toISOString(), comment: "unavailable staff at that time, please change staff/time."},
+            {status: "modify", date: new Date("2017-02-22T04:00:00Z").toISOString(), comment: "dry cleaning"},
+            {status: "approved", date: new Date("2017-02-22T05:00:00Z").toISOString(), comment: "dry cleaning"}
+          ]
+        },
+        {name: 'Lawn Mowing', status: "WAITING", servieType: "NORMAL", requestDate: new Date("2017-02-22T02:00:00Z").toISOString(), scheduleDate: new Date("2017-03-15T02:00:00Z").toISOString(), scheduleTime: new Date("2017-03-15T02:00:00-07:00").toISOString(), worker: 'Chu Cao', cost: 10, comment: 'garden', history: [
+            {status: "create", date: new Date("2017-02-22T02:00:00Z").toISOString(), comment: "garden"},
+            {status: "approved", date: new Date("2017-02-22T05:00:00Z").toISOString(), comment: "garden"}
+          ]
+        }
       ] },
       {title: 'Transporting', count: 1, services: [
-        {name: 'Delivery', status: "WAITING", servieType: "VIP", requestDate: new Date().toISOString(), scheduleDate: new Date().toISOString(), scheduleTime: new Date().toISOString(), worker: 'Anh Hung', cost: 5, comment: 'mail express'},
+        {name: 'Delivery', status: "WAITING", servieType: "VIP", requestDate: new Date("2017-02-22T02:00:00Z").toISOString(), scheduleDate: new Date("2017-03-15T02:00:00Z").toISOString(), scheduleTime: new Date("2017-03-15T02:00:00-07:00").toISOString(), worker: 'Anh Hung', cost: 5, comment: 'mail express', history: [
+            {status: "create", date: new Date("2017-02-22T02:00:00Z").toISOString(), comment: "mail express"},
+            {status: "approved", date: new Date("2017-02-22T05:00:00Z").toISOString(), comment: "mail express"}
+          ]
+        },
       ]},
       {title: 'Food', count: 0, services: null },
     ];
