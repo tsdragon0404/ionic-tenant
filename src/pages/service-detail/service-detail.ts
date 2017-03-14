@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, LoadingController } from 'ionic-angular';
 
 /*
   Generated class for the ServiceDetail page.
@@ -17,12 +17,19 @@ export class ServiceDetailPage {
   isInFull: boolean = true;
   payAmount: number = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public loadingCtrl: LoadingController) {
     this.item = this.navParams.data;
   }
 
   onSubmit(){
-    
+    let loader = this.loadingCtrl.create({
+      content: "Saving...",
+      duration: 2000
+    });
+    loader.present().then(() => {
+
+        this.viewCtrl.dismiss();
+    });
   }
 
   dismiss() {

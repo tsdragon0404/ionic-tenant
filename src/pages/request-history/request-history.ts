@@ -2,27 +2,26 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 
 /*
-  Generated class for the PendingDetailHistory page.
+  Generated class for the RequestHistory page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-pending-detail-history',
-  templateUrl: 'pending-detail-history.html'
+  selector: 'page-request-history',
+  templateUrl: 'request-history.html'
 })
-export class PendingDetailHistoryPage {
+export class RequestHistoryPage {
   items: any;
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
     this.items = this.navParams.data;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PendingDetailHistoryPage');
+    console.log('ionViewDidLoad RequestHistoryPage');
   }
 
-  dismiss() {
+  dismiss(){
     this.viewCtrl.dismiss();
   }
 
@@ -33,6 +32,8 @@ export class PendingDetailHistoryPage {
       return 'danger';
     if(status == 'modify')
       return 'primary';
+    if(status == 'approved')
+      return 'secondary';
   }
 
 }

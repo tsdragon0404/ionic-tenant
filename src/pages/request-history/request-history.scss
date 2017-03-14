@@ -1,0 +1,17 @@
+page-request-history {
+  ion-item.card-header {
+    background-color: color($colors, light) !important;
+    border-bottom: 0.55px solid #c8c7cc !important;
+  }
+  ion-card-content > p {
+    padding-top: 8px;
+    font-style: italic;
+    font-size: 13px;
+  }
+  ion-note {
+    color: #616161 !important;
+  }
+  ion-list.details > ion-item {
+    height: 30px !important;
+  }
+}

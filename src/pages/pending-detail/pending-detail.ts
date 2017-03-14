@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, LoadingController, ModalController } from 'ionic-angular';
-import {PendingDetailHistoryPage} from '../pending-detail-history/pending-detail-history';
+import {RequestHistoryPage} from '../request-history/request-history';
 /*
   Generated class for the PendingDetail page.
 
@@ -59,7 +59,7 @@ export class PendingDetailPage {
   }
 
   fetchHistory(service){
-    let modal = this.modalCtr.create(PendingDetailHistoryPage, service);
+    let modal = this.modalCtr.create(RequestHistoryPage, service);
     modal.present();
   }
 
