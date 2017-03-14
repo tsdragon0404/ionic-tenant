@@ -49,7 +49,9 @@ export class BillingPaymentPage {
   }
 
   openItem(item) {
-    this.navCtrl.push(item.component);
+    this.navCtrl.push(item.component, {
+      previous: "Payments"
+    });
   }
 
   ionViewDidLoad() {

@@ -30,7 +30,9 @@ export class OrderServicePage {
   }
 
   openItem(item) {
-    this.navCtrl.push(item.component);
+    this.navCtrl.push(item.component, {
+      previous: "Services"
+    });
   }
 
   ionViewDidLoad() {

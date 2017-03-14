@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController } from 'ionic-angular';
+import { NavController, NavParams, ToastController, ViewController } from 'ionic-angular';
 
 /*
   Generated class for the EmergencyRepair page.
@@ -16,7 +16,8 @@ export class EmergencyRepairPage {
   services: Array<{value: string, name: string}>;
   order: {serviceName: string, comment: string};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController,
+        public viewCtrl: ViewController) {
     this.services = [
       {value: 'gas', name: 'Gas leaking'},
       {value: 'elec', name: 'Electrics'},
@@ -34,6 +35,12 @@ export class EmergencyRepairPage {
       duration: 3000
     });
     toast.present();
+  }
+
+  ionViewDidLoad() {
+    var previous = this.navParams.get('previous');
+    if(previous) this.viewCtrl.setBackButtonText(previous);
+    console.log('ionViewDidLoad HousingServiceOrderingPage');
   }
 
 }

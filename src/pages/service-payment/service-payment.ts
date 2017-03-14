@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 
 import { ServiceDetailPage } from '../service-detail/service-detail';
 
@@ -17,7 +17,8 @@ export class ServicePaymentPage {
 
   currentItems : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
+      public viewCtrl: ViewController) {
     this.currentItems = [
       {
         "serviceName": "Laundry",
@@ -49,6 +50,8 @@ export class ServicePaymentPage {
   }
 
   ionViewDidLoad() {
+    var previous = this.navParams.get('previous');
+    if(previous) this.viewCtrl.setBackButtonText(previous);
     console.log('ionViewDidLoad ServicePaymentPage');
   }
 

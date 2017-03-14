@@ -15,7 +15,8 @@ import { CommonServiceDetailPage } from '../common-service-detail/common-service
 export class HousingServiceOrderingPage {
   items: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController,
+    public modalCtrl: ModalController, public viewCtrl: ViewController) {
     this.initializeItems();
   }
 
@@ -84,6 +85,8 @@ export class HousingServiceOrderingPage {
   }
 
   ionViewDidLoad() {
+    var previous = this.navParams.get('previous');
+    if(previous) this.viewCtrl.setBackButtonText(previous);
     console.log('ionViewDidLoad HousingServiceOrderingPage');
   }
 

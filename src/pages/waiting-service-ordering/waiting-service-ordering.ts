@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { WaitingServiceOverviewPage } from '../waiting-service-overview/waiting-service-overview';
 
 /*
@@ -14,7 +14,7 @@ import { WaitingServiceOverviewPage } from '../waiting-service-overview/waiting-
 })
 export class WaitingServiceOrderingPage {
   items: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
     this.items = [
       {title: 'House Repairs', count: 0, services: null },
       {title: 'Home Services', count: 2, services: [
@@ -30,6 +30,8 @@ export class WaitingServiceOrderingPage {
   }
 
   ionViewDidLoad() {
+    var previous = this.navParams.get('previous');
+    if(previous) this.viewCtrl.setBackButtonText(previous);
     console.log('ionViewDidLoad WaitingServiceOrderingPage');
   }
 

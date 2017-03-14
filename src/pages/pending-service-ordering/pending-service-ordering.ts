@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { PendingTypeOverviewPage } from '../pending-type-overview/pending-type-overview';
 
 /*
@@ -15,7 +15,7 @@ import { PendingTypeOverviewPage } from '../pending-type-overview/pending-type-o
 export class PendingServiceOrderingPage {
   items: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
 
     this.items = [
       {title: 'House Repairs', count: 3, services: [
@@ -34,6 +34,8 @@ export class PendingServiceOrderingPage {
   }
 
   ionViewDidLoad() {
+    var previous = this.navParams.get('previous');
+    if(previous) this.viewCtrl.setBackButtonText(previous);
     console.log('ionViewDidLoad PendingServiceOrderingPage');
   }
 

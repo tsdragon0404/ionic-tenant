@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 
 /*
   Generated class for the RentalPayment page.
@@ -16,13 +16,15 @@ export class RentalPaymentPage {
   isInFull: boolean = true;
   payAmount: number = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {}
 
   onSubmit(){
     
   }
 
   ionViewDidLoad() {
+    var previous = this.navParams.get('previous');
+    if(previous) this.viewCtrl.setBackButtonText(previous);
     console.log('ionViewDidLoad RentalPaymentPage');
   }
 
