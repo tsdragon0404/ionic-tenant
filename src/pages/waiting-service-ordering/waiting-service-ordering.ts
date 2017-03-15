@@ -18,7 +18,8 @@ export class WaitingServiceOrderingPage {
     this.items = [
       {title: 'House Repairs', count: 0, services: null },
       {title: 'Home Services', count: 2, services: [
-        {name: 'Dry Cleaning', status: "WAITING", servieType: "VIP", requestDate: new Date("2017-02-22T02:00:00Z").toISOString(), scheduleDate: new Date("2017-03-15T02:00:00Z").toISOString(), scheduleTime: new Date("2017-03-15T02:00:00-07:00").toISOString(), worker: 'Co Tam', cost: 5, comment: 'Personel will contact before working. Thank you.', history: [
+        {name: 'Dry Cleaning', status: "WAITING", servieType: "VIP", requestDate: new Date("2017-02-22T02:00:00Z").toISOString(), scheduleDate: new Date("2017-03-15T02:00:00Z").toISOString(), scheduleTime: new Date("2017-03-15T02:00:00-07:00").toISOString(), worker: 'Co Tam', cost: 5, comment: 'Personel will contact before working. Thank you.', 
+        history: [
           { type: "create",
             role: "tenant",
             img: "tenant.jpg",

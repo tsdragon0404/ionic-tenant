@@ -1,7 +1,11 @@
 page-request-history {
-  ion-item.card-header {
-    background-color: color($colors, light) !important;
-    border-bottom: 0.55px solid #c8c7cc !important;
+  ion-item ion-avatar img {
+    height: 48px !important;
+    width: 48px !important;
+  }
+  ion-item .item-inner ion-label{
+    margin-bottom: 4px !important;
+    margin-top: 4px !important;
   }
   ion-card-content > p {
     padding-top: 8px;
