@@ -12,12 +12,12 @@
       </div>
       <ion-list no-lines>
         <ion-item-divider color="light" style="font-style: italic;">
-          <span item-left style="font-size: 14px">Payment Date</span>
+          <span item-left style="font-size: 14px">{{ 'DASHBOARD.PaymentDate' | translate }}</span>
           <span item-right>23/03/2017</span>
         </ion-item-divider>
         <ion-item style="text-align: center">
           <span style="font-size: 16px">$</span>
-          <span class="payment-amount animated zoomIn" color="primary">630.00</span>
+          <span ion-text class="payment-amount animated zoomIn" color="primary">630.00</span>
         </ion-item>
 
         <ion-item-divider color="light" style="font-style: italic;">
@@ -26,7 +26,7 @@
         </ion-item-divider>
         <ion-item style="text-align: center">
           <span style="font-size: 16px">$</span>
-          <span class="payment-amount animated zoomIn" color="danger">30.00</span>
+          <span ion-text class="payment-amount animated zoomIn" color="danger">30.00</span>
         </ion-item>
         <ion-item-divider color="light">
         </ion-item-divider>
@@ -52,7 +52,7 @@
             (chartHover)="chartHovered($event)"
             (chartClick)="chartClicked($event)">
         </canvas>
-        <span style="font-style: italic; font-size: 14px" color="primary">Year-to-end expend</span>
+        <span ion-text style="font-style: italic; font-size: 14px" color="primary">Year-to-end expend</span>
       </div>
       <div class="animated zoomIn" style="margin-top: 10px">
         <canvas baseChart
@@ -64,7 +64,7 @@
             (chartHover)="barChartHovered($event)"
             (chartClick)="barChartClicked($event)">
         </canvas>
-        <span style="font-style: italic; font-size: 14px" color="primary">History expend</span>
+        <span ion-text style="font-style: italic; font-size: 14px" color="primary">History expend</span>
       </div>
 
     </ion-slide>

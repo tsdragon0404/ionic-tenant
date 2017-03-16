@@ -7,17 +7,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Settings</ion-title>
+    <ion-title>{{'SETTINGS.Settings' | translate}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content>
   <ion-list>
-    <button ion-item icon-left *ngFor="let p of items" (click)="openSetting($event, p)">
-      <ion-icon name="{{p.icon}}"></ion-icon>
-      {{p.title}}
+    <button ion-item icon-left (click)="openSetting($event, items[0])">
+      <ion-icon name="notifications"></ion-icon>
+      {{'SETTINGS.Notifications' | translate}}
     </button>
+    <button ion-item icon-left (click)="openSetting($event, items[1])">
+      <ion-icon name="key"></ion-icon>
+      {{'SETTINGS.ChangePassword' | translate}}
+    </button>
+    <ion-item>
+      <ion-icon style="margin-right: .3em !important" name="globe" item-left></ion-icon>
+      <ion-label>{{'SETTINGS.Language' | translate}}</ion-label>
+      <ion-select [(ngModel)]="language" (ionChange)="ionChange($event)">
+        <ion-option value="vi">Tiếng Việt</ion-option>
+        <ion-option value="en">English</ion-option>
+      </ion-select>
+    </ion-item>
   </ion-list>
 </ion-content>

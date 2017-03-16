@@ -1,6 +1,7 @@
 {
   "name": "ionic-hello-world",
-  "author": "Ionic Framework",
+  "author": "2homes for TenantTenant",
+  "version": "1.0.0",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
@@ -19,15 +20,16 @@
     "@angular/platform-browser": "2.2.1",
     "@angular/platform-browser-dynamic": "2.2.1",
     "@angular/platform-server": "2.2.1",
-    "@ionic/storage": "1.1.7",
-    "ionic-angular": "2.0.0-rc.5",
-    "ionic-native": "2.2.11",
-    "ionicons": "3.0.0",
-    "rxjs": "5.0.0-beta.12",
-    "zone.js": "0.6.26",
-    "sw-toolbox": "3.4.0",
+    "@ionic/storage": "^2.0.1",
     "chart.js": "^2.4.0",
-    "ng2-charts": "^1.5.0"
+    "ionic-angular": "^2.2.0",
+    "ionic-native": "^2.8.1",
+    "ionicons": "",
+    "ng2-charts": "^1.5.0",
+    "ng2-translate": "^5.0.0",
+    "rxjs": "^5.2.0",
+    "sw-toolbox": "^3.6.0",
+    "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "@ionic/app-scripts": "1.0.0",
@@ -49,5 +51,5 @@
       "locator": "ios"
     }
   ],
-  "description": "tenant-site: An Ionic project"
+  "description": "2homes for TenantTenant: An Ionic project"
 }
