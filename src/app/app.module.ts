@@ -43,6 +43,8 @@ import { WaitingServiceOverviewPage } from '../pages/waiting-service-overview/wa
 import { WaitingServiceDetailPage } from '../pages/waiting-service-detail/waiting-service-detail';
 import { MorePage } from '../pages/more/more';
 import { RequestHistoryPage } from '../pages/request-history/request-history';
+import { ExtendServicesListPage } from '../pages/extend-services-list/extend-services-list';
+import { ExtendServicesDetailPage } from '../pages/extend-services-detail/extend-services-detail';
 
 import { AuthService } from '../providers/auth-service';
 
@@ -86,7 +88,9 @@ import { AuthService } from '../providers/auth-service';
     WaitingServiceOverviewPage,
     WaitingServiceDetailPage,
     MorePage,
-    RequestHistoryPage
+    RequestHistoryPage,
+    ExtendServicesListPage,
+    ExtendServicesDetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -138,7 +142,9 @@ import { AuthService } from '../providers/auth-service';
     WaitingServiceOverviewPage,
     WaitingServiceDetailPage,
     MorePage,
-    RequestHistoryPage
+    RequestHistoryPage,
+    ExtendServicesListPage,
+    ExtendServicesDetailPage
   ],
   providers: [
     {

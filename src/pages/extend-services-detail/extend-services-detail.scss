@@ -1,0 +1,73 @@
+page-extend-services-detail {
+  .swiper-container-horizontal > .swiper-pagination-progress {
+    height: 1.8px;
+  }
+
+  .swiper-pagination-progress .swiper-pagination-progressbar {
+    background-color: #039BE5;
+  }
+
+  .slide-zoom{
+    height: 100%;
+  }
+
+  ion-title h3{
+    font-size: 1.5rem;
+  }
+  ion-title span{
+    font-size: 1.2rem;
+    color: #757575;
+  }
+
+  /* slide header */
+  .slideHeader {
+    margin-left: 15px;
+    margin-right: 7px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #757575;
+  }
+  .slideHeader > h3{
+    font-size: 2rem;
+  }
+  .slideHeader > p{
+    font-size: 1.5rem;
+    color: #9E9E9E;
+  }
+  /* slide content */
+  .list, .list >ion-item{
+    background-color: #FAFAFA;
+    font-size: 1.5rem;
+  }
+  .slideContent {
+    border-top : 1px solid #9E9E9E;
+    border-bottom: 1px solid #9E9E9E;
+    margin-top: 20px;
+    height: 200px;
+    background-color: #FAFAFA;
+    text-align: center;
+  }
+  .slideContent > div {
+    padding: 0 10px;
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+  }
+  .slideContent > div h4 {
+    font-size: 1.7rem;
+  }
+  .slideContent > div p {
+    font-size: 1.5rem;
+  }
+  /* slide footer/button */
+  .btBottom{
+    background-color: #039BE5;
+    position: fixed;
+    width: 100%;
+    bottom: 0%;
+  }
+  .btBottom > button{
+    background-color: #039BE5;
+  }
+
+}

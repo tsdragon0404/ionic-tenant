@@ -1,5 +1,5 @@
 <!--
-  Generated template for the HousingServiceOrdering page.
+  Generated template for the ExtendServicesList page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
@@ -12,10 +12,11 @@
 
 </ion-header>
 
-
 <ion-content>
-  <ion-searchbar (input)="getItems($event)"></ion-searchbar>
-  <button ion-item *ngFor="let item of items" (click)="extendServiceSelect(item)">
+  <ion-list-header color="light">
+    {{items.name}}
+  </ion-list-header>
+  <button ion-item *ngFor="let item of items.services" (click)="extendServiceDetail(item)">
     {{ item.name }}
   </button>
 </ion-content>

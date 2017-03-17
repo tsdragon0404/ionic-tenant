@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, ModalController, Platform, ViewController } from 'ionic-angular';
 import { CommonServiceDetailPage } from '../common-service-detail/common-service-detail';
+import { ExtendServicesListPage } from '../extend-services-list/extend-services-list';
 
 /*
   Generated class for the HousingServiceOrdering page.
@@ -90,9 +91,14 @@ export class HousingServiceOrderingPage {
     console.log('ionViewDidLoad HousingServiceOrderingPage');
   }
 
+  /*
   commonServiceSelect(item){
     let modal = this.modalCtrl.create(CommonServiceDetailPage, item);
     modal.present();
+  }
+*/
+  extendServiceSelect(item){
+    this.navCtrl.push(ExtendServicesListPage, item);
   }
 
 }
