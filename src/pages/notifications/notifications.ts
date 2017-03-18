@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { LocalNotifications } from 'ionic-native';
 
 /*
@@ -16,13 +16,19 @@ export class NotificationsPage {
 
   hasPermission: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public viewCtrl: ViewController) {
+
     LocalNotifications.hasPermission().then((res) => {
         this.hasPermission = res;
     });
+
   }
 
   ionViewDidLoad() {
+    this.viewCtrl.setBackButtonText('Notifications');
     console.log('ionViewDidLoad NotificationsPage');
   }
 

@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Awaiting Services</ion-title>
+    <ion-title>{{requests.title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,25 +15,20 @@
 
 <ion-content>
   <ion-list>
-    <ion-list-header color="light">
-      {{requests.title}}
-    </ion-list-header>
+    <ion-item-sliding *ngFor="let item of requests.services">
+      <ion-item (click)="onSelected(item)">
+        <h2 color="primary">{{item.name}} <ion-icon *ngIf="item.servieType == 'VIP'" name="bookmark"></ion-icon></h2>
+        <ion-note item-right>{{item.requestDate | date: 'dd/MM/yyyy'}}</ion-note>
+        <p><ion-icon name="person"></ion-icon> {{item.worker}}</p>
+        <p><ion-icon name="clock"></ion-icon> {{item.scheduleDate | date: 'dd/MM/yyyy h:mma'}}</p>
+      </ion-item>
 
-      <ion-item-sliding *ngFor="let item of requests.services">
-        <ion-item (click)="onSelected(item)">
-          <h2 color="primary">{{item.name}} <ion-icon *ngIf="item.servieType == 'VIP'" name="bookmark"></ion-icon></h2>
-          <ion-note item-right>{{item.requestDate | date: 'dd/MM/yyyy'}}</ion-note>
-          <p><ion-icon name="person"></ion-icon> {{item.worker}}</p>
-          <p><ion-icon name="clock"></ion-icon> {{item.scheduleDate | date: 'dd/MM/yyyy h:mma'}}</p>
-        </ion-item>
-
-        <ion-item-options side="right">
-          <button ion-button color="danger">
-            <ion-icon name="close-circle"></ion-icon>
-            Cancel
-          </button>
-        </ion-item-options>
-      </ion-item-sliding>
-
+      <ion-item-options side="right">
+        <button ion-button color="danger">
+          <ion-icon name="close-circle"></ion-icon>
+          Cancel
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>

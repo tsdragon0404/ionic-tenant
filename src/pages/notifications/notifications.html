@@ -7,19 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Notifications</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item>
-      <ion-label>Push Notifications</ion-label>
-      <ion-toggle checked="{{hasPermission}}"></ion-toggle>
-    </ion-item>
+    <ion-item-group>
+      <ion-item-divider color="light">
+        Notifications
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Phone Notifications</ion-label>
+        <ion-toggle checked="{{hasPermission}}"></ion-toggle>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light">
+        Contact via
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-toggle checked="true"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Phone Number</ion-label>
+        <ion-toggle checked="true"></ion-toggle>
+      </ion-item>
+    </ion-item-group>
   </ion-list>
 </ion-content>

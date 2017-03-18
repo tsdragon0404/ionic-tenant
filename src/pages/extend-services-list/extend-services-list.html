@@ -7,15 +7,12 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Extend Services</ion-title>
+    <ion-title>{{items.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content>
-  <ion-list-header color="light">
-    {{items.name}}
-  </ion-list-header>
   <button ion-item *ngFor="let item of items.services" (click)="extendServiceDetail(item)">
     {{ item.name }}
   </button>

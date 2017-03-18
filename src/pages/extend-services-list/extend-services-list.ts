@@ -15,9 +15,15 @@ import { ExtendServicesDetailPage } from '../extend-services-detail/extend-servi
 export class ExtendServicesListPage {
   items: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public modalCtrl: ModalController) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public viewCtrl: ViewController, 
+    public modalCtrl: ModalController) {
+
     this.items = this.navParams.data;
-  }
+  
+}
 
   ionViewDidLoad() {
     this.viewCtrl.setBackButtonText('');
