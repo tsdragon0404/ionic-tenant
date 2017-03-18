@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, ViewController, Slides, AlertController, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, Slides, AlertController, LoadingController, ActionSheetController } from 'ionic-angular';
 
 /*
   Generated class for the ExtendServicesDetail page.
@@ -16,7 +16,14 @@ export class ExtendServicesDetailPage {
 
   slidePecentage: number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public viewCtrl: ViewController, 
+    public alertCtrl: AlertController, 
+    public loadingCtrl: LoadingController,
+    public actionSheetCtrl: ActionSheetController) {
+    
     this.slidePecentage = 0;
   }
 
@@ -37,7 +44,24 @@ export class ExtendServicesDetailPage {
   }
 
   dismiss(){
-    this.viewCtrl.dismiss();
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Are you sure you want to cancel?',
+      buttons: [
+        {
+          text: 'Yes',
+          role: 'destructive',
+          handler: () => {
+            this.viewCtrl.dismiss();
+
+          }
+        },{
+          text: 'No',
+          role: 'cancel',
+          handler: () => { }
+        }
+      ]
+    });
+    actionSheet.present();
   }
 
   gotoNext(){
