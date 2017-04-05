@@ -1,11 +1,13 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { HttpModule, Http } from '@angular/http';
+import { Http } from '@angular/http';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { TranslateModule, TranslateStaticLoader, TranslateLoader } from 'ng2-translate/ng2-translate';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
+import { KeycloakService } from './keycloak/keycloak.service';
+import { KEYCLOAK_HTTP_PROVIDER } from './keycloak/keycloak.http';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
@@ -151,7 +153,9 @@ import { AuthService } from '../providers/auth-service';
       provide: ErrorHandler,
       useClass: IonicErrorHandler
     },
-    AuthService
+    AuthService,
+    KeycloakService,
+    KEYCLOAK_HTTP_PROVIDER
   ]
 })
 

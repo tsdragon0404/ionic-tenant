@@ -6,6 +6,8 @@ import { AccountPage } from '../account/account';
 import { SettingsPage } from '../settings/settings';
 import { AboutPage } from '../about/about';
 
+import { KeycloakService } from '../../app/keycloak/keycloak.service';
+
 /*
   Generated class for the More page.
 
@@ -20,7 +22,11 @@ export class MorePage {
 
   pages: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public actionSheetCtrl: ActionSheetController) {
+  constructor(
+    private navCtrl: NavController, 
+    private navParams: NavParams, 
+    private actionSheetCtrl: ActionSheetController,
+    private kc : KeycloakService) {
     this.pages = [
       { icon: 'cog', title: 'Settings', component: SettingsPage },
       { icon: 'information-circle', title: 'About us', component: AboutPage }
@@ -43,6 +49,7 @@ export class MorePage {
           text: 'Log Out',
           role: 'destructive',
           handler: () => {
+            this.kc.logout();
             this.navCtrl.parent.parent.setRoot(LoginPage);
           }
         },{
