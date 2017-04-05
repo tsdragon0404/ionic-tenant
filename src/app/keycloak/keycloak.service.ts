@@ -15,13 +15,12 @@ export class KeycloakService {
     KeycloakService.auth.loggedIn = false;
 
     return new Promise((resolve, reject) => {
-      debugger;
       keycloakAuth.init({ onLoad: 'login-required' })
       .success(() => {
         KeycloakService.auth.loggedIn = true;
         KeycloakService.auth.authz = keycloakAuth;
         KeycloakService.auth.logoutUrl = keycloakAuth.authServerUrl
-          + '/realms/demo/protocol/openid-connect/logout?redirect_uri='
+          + '/realms/2home/protocol/openid-connect/logout?redirect_uri='
           + document.baseURI;
         resolve();
       })
@@ -32,7 +31,6 @@ export class KeycloakService {
   }
 
   logout() {
-    debugger;
     console.log('*** LOGOUT');
     KeycloakService.auth.loggedIn = false;
     KeycloakService.auth.authz = null;
@@ -42,7 +40,6 @@ export class KeycloakService {
 
   getToken(): Promise<string> {
     return new Promise<string>((resolve, reject) => {
-      debugger;
       if (KeycloakService.auth.authz.token) {
         KeycloakService.auth.authz
           .updateToken(5)
