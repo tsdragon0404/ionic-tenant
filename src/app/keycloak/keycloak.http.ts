@@ -14,6 +14,13 @@ export class KeycloakHttp extends Http {
   }
 
   request(url: string | Request, options?: RequestOptionsArgs): Observable<Response> {
+    
+    if (typeof url === 'string' && url.startsWith('assets/i18n')) {
+        return super.request(url, options);
+    } else if (url instanceof Request && url.url.startsWith('assets/i18n')) {
+        return super.request(url);
+    }
+
     const tokenPromise: Promise<string> = this._keycloakService.getToken();
     const tokenObservable: Observable<string> = Observable.fromPromise(tokenPromise);
 

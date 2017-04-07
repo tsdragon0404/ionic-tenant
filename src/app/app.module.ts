@@ -159,7 +159,7 @@ import { AuthService } from '../providers/auth-service';
   ]
 })
 
-export class AppModule {}
+export class AppModule { }
 
 export function createTranslateLoader(http: Http) {
     return new TranslateStaticLoader(http, 'assets/i18n', '.json');

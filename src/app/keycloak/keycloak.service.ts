@@ -10,12 +10,19 @@ export class KeycloakService {
 
   static init(): Promise<any> {
     
-    const keycloakAuth: any = Keycloak();
+    const keycloakAuth: any = Keycloak({
+      "realm": "2home",
+      "url": "https://kc-ap.2homes.vn/auth",
+      "clientId": "owner",
+      "credentials": {
+        "secret": "9c2f783d-6b2b-4d36-8e62-afc2cfe68ea3"
+      }
+    });
     
     KeycloakService.auth.loggedIn = false;
 
     return new Promise((resolve, reject) => {
-      keycloakAuth.init({ onLoad: 'login-required' })
+      keycloakAuth.init({ onLoad: 'login-required', checkLoginIframe: false})
       .success(() => {
         KeycloakService.auth.loggedIn = true;
         KeycloakService.auth.authz = keycloakAuth;
@@ -32,10 +39,11 @@ export class KeycloakService {
 
   logout() {
     console.log('*** LOGOUT');
+    KeycloakService.auth.authz.logout();
     KeycloakService.auth.loggedIn = false;
     KeycloakService.auth.authz = null;
-
-    window.location.href = KeycloakService.auth.logoutUrl;
+    
+    //window.location.href = KeycloakService.auth.logoutUrl;
   }
 
   getToken(): Promise<string> {

@@ -4,23 +4,27 @@ import { StatusBar, Splashscreen, BackgroundMode } from 'ionic-native';
 import { TranslateService } from 'ng2-translate/ng2-translate';
 import { Storage } from '@ionic/storage';
 
+import { KeycloakService } from './keycloak/keycloak.service';
+
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  initPage : any = HomePage;
+  initPage : any;
 
   constructor (
     public platform: Platform,
     public translate: TranslateService,
     public storage: Storage
   ) {
-    
+
     this.initializeApp();
     this.translateConfig();
+    
   }
 
   initializeApp(){
@@ -31,6 +35,17 @@ export class MyApp {
       Splashscreen.hide();
 
       BackgroundMode.enable();
+      
+      KeycloakService.init()
+        .then(() => { 
+          this.initPage = HomePage;
+        })
+        .catch(() => { 
+          window.location.reload();
+        });
+      
+      this.initPage = LoginPage;
+      
     });
   }
 

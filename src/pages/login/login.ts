@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, Loading } from 'ionic-angular';
-import { AuthService } from '../../providers/auth-service';
+import { KeycloakService } from '../../app/keycloak/keycloak.service';
 import { HomePage } from '../home/home';
  
 @Component({
@@ -11,33 +11,21 @@ export class LoginPage {
   loading: Loading;
   registerCredentials = {email: '', password: ''};
  
-  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) {
-    this.registerCredentials.email = 'tenant@2homes.vn';
-    this.registerCredentials.password = 'admin';
+  constructor(private nav: NavController, private alertCtrl: AlertController, private loadingCtrl: LoadingController) {
+    if(KeycloakService.auth.loggedIn){
+      this.nav.setRoot(HomePage);
+    }
   }
  
-  public login() {
-    this.showLoading()
-    this.auth.login(this.registerCredentials).subscribe(allowed => {
-      if (allowed) {
-        setTimeout(() => {
-          this.loading.dismiss();
-          this.nav.setRoot(HomePage)
+  login() {
+
+    KeycloakService.init()
+        .then(() => { 
+          this.nav.setRoot(HomePage);
+        })
+        .catch(() => { 
+          window.location.reload();
         });
-      } else {
-        this.showError("Access Denied");
-      }
-    },
-    error => {
-      this.showError(error);
-    });
-  }
- 
-  showLoading() {
-    this.loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
-    this.loading.present();
   }
  
   showError(text) {
